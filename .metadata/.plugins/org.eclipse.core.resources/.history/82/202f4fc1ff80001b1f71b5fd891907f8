@@ -1,0 +1,15 @@
+package com.prueba.global.satelites;
+
+public class Kenobi extends Satelite{
+	
+	private float distance;
+
+	public Kenobi(float distance) {
+		
+		this.distance = distance;
+		super("Kenobi", -500f, -200f);
+	}
+	
+	
+
+}

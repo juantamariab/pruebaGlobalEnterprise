@@ -1,0 +1,72 @@
+package com.prueba.global.satelites;
+
+public class satelite {
+	
+	private String name;
+	private float coordenadaX;
+	private float coordenadaY;
+	private float positionsX;
+	private float positionsY;
+	
+	
+	public satelite(String name, float positionsX, float positionsY) {
+		super();
+		this.name = name;
+		this.positionsX = positionsX;
+		this.positionsY = positionsY;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public float getCoordenadaX() {
+		return coordenadaX;
+	}
+
+
+	public void setCoordenadaX(float coordenadaX) {
+		this.coordenadaX = coordenadaX;
+	}
+
+
+	public float getCoordenadaY() {
+		return coordenadaY;
+	}
+
+
+	public void setCoordenadaY(float coordenadaY) {
+		this.coordenadaY = coordenadaY;
+	}
+
+
+	public float getPositionsX() {
+		return positionsX;
+	}
+
+
+	public void setPositionsX(float positionsX) {
+		this.positionsX = positionsX;
+	}
+
+
+	public float getPositionsY() {
+		return positionsY;
+	}
+
+
+	public void setPositionsY(float positionsY) {
+		this.positionsY = positionsY;
+	}
+	
+	
+	
+	
+}

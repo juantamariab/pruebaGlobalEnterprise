@@ -1,0 +1,12 @@
+package com.prueba.global.satelites;
+
+public class Kenobi extends Satellite{
+	
+
+	public Kenobi() {
+		super("Kenobi", -500f, -200f);
+	}
+	
+	
+
+}

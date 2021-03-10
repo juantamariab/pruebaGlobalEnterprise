@@ -1,0 +1,52 @@
+package com.prueba.global.api;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.prueba.global.satelites.Kenobi;
+import com.prueba.global.satelites.Satelite;
+import com.prueba.global.satelites.Skywalker;
+import com.prueba.global.satelites.Solo;
+import com.prueba.global.util.ResponseJson;
+import com.prueba.global.util.StatusCode;
+
+@RestController
+public class ResolverRestController {
+	
+	@CrossOrigin
+	@RequestMapping(path = "/topsecret/" , method = RequestMethod.POST)
+	public ResponseJson topSecret(List<Satelite> satelites){
+		ResponseJson json = new ResponseJson();
+		json.setStatus(StatusCode.SUCCES.getCode());
+		satelites.forEach(s ->{
+			if(s.getName().equals("Kenobi")) {
+				Kenobi k = new Kenobi();
+				json.setObject(k);
+			}else if(s.getName().equals("Skywalker")) {
+				Skywalker sk = new Skywalker();
+				json.setObject(sk);
+			}else if(s.getName().equals("Solo")){
+				Solo so = new Solo();
+				json.setObject(so);
+			}else {
+				json.setStatus(StatusCode.CONFLICT.getCode());
+				json.setMessage("Satelite Desconocido!");
+			}
+		});
+		return json;
+	}
+	
+	@CrossOrigin
+	@RequestMapping(path="/prueba", method = RequestMethod.GET)
+	public ResponseJson getPrueba() {
+		ResponseJson json = new ResponseJson();
+		json.setStatus(StatusCode.SUCCES.getCode());
+		return json;
+	}
+	
+
+}

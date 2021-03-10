@@ -1,0 +1,67 @@
+package com.prueba.global.util;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.prueba.global.satelites.Kenobi;
+import com.prueba.global.satelites.Satellite;
+import com.prueba.global.satelites.Skywalker;
+import com.prueba.global.satelites.Solo;
+
+public class SatellitesFrom {
+	
+	private List<Satellite> satellites;
+
+	public SatellitesFrom() {
+		super();
+	}
+
+	public List<Satellite> getSatelites() {
+		return satellites;
+	}
+
+	public void setSatelites(List<Satellite> satellites) {
+		this.satellites = satellites;
+	}
+	
+	public ResponseJson validateInfomation(List<Satellite> list) {
+		ResponseJson json = new ResponseJson();
+		List<Satellite> satellitesList = new ArrayList<Satellite>();
+		json.setStatus(StatusCode.SUCCES.getCode());
+		list.forEach(s ->{
+			if(s.getName() != null) {
+				if(s.getName().equals("Kenobi")) {
+					Kenobi k = new Kenobi();
+					k.getLocation(s.getDistance());
+					k.filterMessage(s.getMessage());
+					if(k.getMsg() != null || (k.getCoordenadaX() != 0 && k.getCoordenadaY() != 0)) {
+						satellitesList.add(k);
+					}
+				}else if(s.getName().equals("Skywalker")) {
+					Skywalker sk = new Skywalker();
+					sk.getLocation(s.getDistance());
+					sk.filterMessage(s.getMessage());
+					if(sk.getMsg() != null || (sk.getCoordenadaX() != 0 && sk.getCoordenadaY() != 0)) {
+						satellitesList.add(sk);
+					}
+				}else if(s.getName().equals("Solo")){
+					Solo so = new Solo();
+					so.getLocation(s.getDistance());
+					so.filterMessage(s.getMessage());
+					if(so.getMsg() != null || (so.getCoordenadaX() != 0 && so.getCoordenadaY() != 0)) {
+						satellitesList.add(so);
+					}
+				}else {
+					json.setStatus(StatusCode.CONFLICT.getCode());
+					json.setMessage("Satellite Desconocido!");
+				}
+			}else{
+				json.setStatus(StatusCode.INTERNAL_SERVER_ERROR.getCode());
+				json.setMessage(StatusCode.INTERNAL_SERVER_ERROR.getLabel());
+			}
+		});
+		json.setObject(satellitesList);
+		return json;
+	}
+	
+}

@@ -1,0 +1,23 @@
+package com.prueba.global.satelites;
+
+public class Kenobi extends Satellite{
+	
+	private String[] msgArrayDefault;
+	
+	public Kenobi() {
+		super("Kenobi", -500f, -200f);
+	}
+
+	public String[] getMsgArrayDefault() {
+		msgArrayDefault = new String[5];
+		msgArrayDefault[0]="";
+		msgArrayDefault[1]="este";
+		msgArrayDefault[2]="es";
+		msgArrayDefault[3]="un";
+		msgArrayDefault[4]="mensaje";
+		return msgArrayDefault;
+	}
+	
+	
+
+}

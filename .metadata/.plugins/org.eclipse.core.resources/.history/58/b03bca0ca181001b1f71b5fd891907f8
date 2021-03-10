@@ -1,0 +1,10 @@
+package com.prueba.global.satelites;
+
+public class Solo extends Satellite{
+	
+	public Solo() {
+		super("Solo", 500f,100f);
+		// TODO Auto-generated constructor stub
+	}
+
+}

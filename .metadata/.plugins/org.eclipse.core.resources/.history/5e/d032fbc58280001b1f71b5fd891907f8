@@ -1,0 +1,86 @@
+package com.prueba.global.satelites;
+
+public class Satelite {
+	
+	private String name;
+	private float coordenadaX;
+	private float coordenadaY;
+	private float positionsX;
+	private float positionsY;
+	
+	
+	public Satelite(String name, float positionsX, float positionsY) {
+		super();
+		this.name = name;
+		this.positionsX = positionsX;
+		this.positionsY = positionsY;
+		this.positionsX = 0f;
+		this.positionsY = 0;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public float getCoordenadaX() {
+		return coordenadaX;
+	}
+
+
+	public void setCoordenadaX(float coordenadaX) {
+		this.coordenadaX = coordenadaX;
+	}
+
+
+	public float getCoordenadaY() {
+		return coordenadaY;
+	}
+
+
+	public void setCoordenadaY(float coordenadaY) {
+		this.coordenadaY = coordenadaY;
+	}
+
+
+	public float getPositionsX() {
+		return positionsX;
+	}
+
+
+	public void setPositionsX(float positionsX) {
+		this.positionsX = positionsX;
+	}
+
+
+	public float getPositionsY() {
+		return positionsY;
+	}
+
+
+	public void setPositionsY(float positionsY) {
+		this.positionsY = positionsY;
+	}
+	
+	public float getLocation(float x, float y) {
+		return (positionsX - x) + (positionsY - y);
+	}
+	
+	public String GetMessage(String[] messages) {
+		String rpta = "";
+		for(int i = 0; i < messages.length; i++) {
+			rpta += (messages[i].equals("") || messages[i] == null)?" ":messages[i];
+		}
+		return rpta;
+	}
+	
+	
+	
+	
+}

@@ -1,0 +1,27 @@
+package com.prueba.global.util;
+
+import java.util.List;
+
+import com.prueba.global.satelites.Satelite;
+
+public class SatellitesFrom {
+	
+	private List<Satelite> satellites;
+
+	public SatellitesFrom() {
+		super();
+	}
+
+	public List<Satelite> getSatelites() {
+		return satellites;
+	}
+
+	public void setSatelites(List<Satelite> satellites) {
+		this.satellites = satellites;
+	}
+	
+	
+	
+	
+
+}
