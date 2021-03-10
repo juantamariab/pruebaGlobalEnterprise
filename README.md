@@ -1,0 +1,2 @@
+# pruebaGlobalEnterprise
+Prueba tecnica GlobalEnterprise
